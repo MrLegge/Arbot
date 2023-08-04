@@ -28,8 +28,8 @@
 		  void rotateRight(unsigned short turnSpeed);
 		  void rotateLeft(unsigned short turnSpeed);
 		private:
-			L298N *motorRight;
-			L298N *motorLeft;
+			L298N *_motorRight;
+			L298N *_motorLeft;
 	};
 
 #endif 
