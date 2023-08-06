@@ -8,7 +8,8 @@
 
 #include "L298Pshield.h"
 
-
+#define trigPin 8
+#define echoPin 7
 
 void setup()
 {
