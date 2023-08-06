@@ -6,16 +6,14 @@
   email: phil.legge@det.nsw.edu.au
 */
 
-#define trigPin 8
-#define echoPin 7
+
+
 //  Motor Right
 int const rightMotorSpeedPin = 10;
 int const rightMotorDirectionPin = 12;
 //  Motor Left
 int const leftMotorSpeedPin = 11;
 int const leftMotorDirectionPin = 13;
-
-int carDistance;
 
 int const BUZZER = 4;
 
