@@ -16,7 +16,7 @@ ShieldBase *myBase;
 
 void setup()
 {
-  pinMode(BUZZER, OUTPUT);
+  pinMode(myBase->BUZZER, OUTPUT);
   myBase = new ShieldBase(); 
  
 }
