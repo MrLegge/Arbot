@@ -15,6 +15,11 @@ ShieldBase::ShieldBase(){
   //  Motor Left
   leftMotorSpeedPin = 11;
   leftMotorDirectionPin = 13;
+  pinMode(rightMotorSpeedPin, OUTPUT);        // set all the motor control pins to outputs
+  pinMode(leftMotorSpeedPin, OUTPUT);
+  pinMode(rightMotorDirectionPin, OUTPUT);
+  pinMode(leftMotorDirectionPin, OUTPUT);
+
 }
 
 //Function to drive the car forward with custom left and right motor speeds.
