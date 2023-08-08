@@ -36,7 +36,7 @@ void loop(){
         delay(500);
       }
   }else {                                  //logical reaction based on ultrasonic return less than 0 (distance greater than 3m or reflected not returned?)
-      driveForward(250,250);
+      myBase->driveForward(250,250);
       delay(500);
       }    
 }
