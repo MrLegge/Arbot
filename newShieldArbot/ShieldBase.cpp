@@ -30,7 +30,7 @@ void ShieldBase::driveForward(int leftMotorSpeed, int rightMotorSpeed){
 
   // Set the directions for forward motion.
   digitalWrite(leftMotorDirectionPin, HIGH);
-  digitalWrite(rightMotorDirectionPin, HIGH);
+  digitalWrite(rightMotorDirectionPin, LOW);
 
   // Set the motor speeds.
   analogWrite(leftMotorSpeedPin, leftMotorSpeed);
@@ -45,7 +45,7 @@ void ShieldBase::driveBackward(int leftMotorSpeed, int rightMotorSpeed){
 
   // Set the directions for backward motion.
   digitalWrite(leftMotorDirectionPin, LOW);
-  digitalWrite(rightMotorDirectionPin, LOW);
+  digitalWrite(rightMotorDirectionPin, HIGH);
 
   // Set the motor speeds.
   analogWrite(leftMotorSpeedPin, leftMotorSpeed);
@@ -59,7 +59,7 @@ void ShieldBase::rotateRight(int rotateSpeed){
 
   // Set the directions for rotation.
   digitalWrite(leftMotorDirectionPin, HIGH);
-  digitalWrite(rightMotorDirectionPin, LOW);
+  digitalWrite(rightMotorDirectionPin, HIGH);
 
   // Set the motor speeds for rotation.
   analogWrite(leftMotorSpeedPin, rotateSpeed);
@@ -73,7 +73,7 @@ void ShieldBase::rotateLeft(int turnSpeed){
 
   // Set the directions for rotation.
   digitalWrite(leftMotorDirectionPin, LOW);
-  digitalWrite(rightMotorDirectionPin, HIGH);
+  digitalWrite(rightMotorDirectionPin, LOW);
 
   // Set the motor speeds for rotation.
   analogWrite(leftMotorSpeedPin, turnSpeed);
