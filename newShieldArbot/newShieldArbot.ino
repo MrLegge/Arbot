@@ -6,21 +6,18 @@
   email: phil.legge@det.nsw.edu.au
 */
 
-#include "L298Pshield.h"
+#include "ShieldBase.h"
 
 #define trigPin 8
 #define echoPin 7
 
+int carDistance;
+ShieldBase *myBase;
+
 void setup()
 {
-  pinMode(rightMotorSpeedPin, OUTPUT);        // set all the motor control pins to outputs
-  pinMode(leftMotorSpeedPin, OUTPUT);
-  pinMode(rightMotorDirectionPin, OUTPUT);
-  pinMode(leftMotorDirectionPin, OUTPUT);
   pinMode(BUZZER, OUTPUT);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);                    // Set the echo pin to input
- 
+  myBase = new ShieldBase(); 
  
 }
 
@@ -32,14 +29,13 @@ void loop(){
   carDistance = ultraSonicDistance(trigPin,echoPin);  // first the distance is queried from the ultrasonic
   if (carDistance > 0){                               // logical decision based on ultrasonic return larger than zero
       if(carDistance < 30){                          
-        driveForward(0,0);                            // stop!
+        myBase->driveForward(0,0);                            // stop!
         delay(500);
       }else{                                          //logical reaction based on ultrasonic return larger than 30 less than 3m
-               driveForward(200,200);  
+        myBase->driveForward(200,200);  
         delay(500);
       }
-  }else {                                   //logical reaction based on ultrasonic return less than 0 (distance greater than 3m or reflected not returned?)
-     
+  }else {                                  //logical reaction based on ultrasonic return less than 0 (distance greater than 3m or reflected not returned?)
       driveForward(250,250);
       delay(500);
       }    
@@ -50,8 +46,8 @@ void loop(){
     // returns error code or value for use in logic conditions based on offset to object infront
     long duration;
     int distance;
-    pinMode(trig, OUTPUT);
-    pinMode(echo, INPUT);
+    pinMode(trig, OUTPUT);  // Set the trig pin to output
+    pinMode(echo, INPUT);   // Set the echo pin to input
     digitalWrite(trig, LOW);
     delayMicroseconds(2);
     digitalWrite(trig, HIGH);
