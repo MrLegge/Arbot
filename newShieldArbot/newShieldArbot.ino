@@ -1,5 +1,5 @@
 /*
-  shieldBase.h class library to provide bsics of the robotbase with the new shield
+  shieldBase.h class library to provide basics of the robotBase with the new shield
   
   Author: Robert Newell + chatGPT  27/7/23
   Adapted: Phil Legge  6/8/23
@@ -12,7 +12,7 @@
 #define echoPin 7
 
 int carDistance;
-ShieldBase *myBase;
+ShieldBase *myBase; //Creating an instance of our ShieldBase object so we can call its' functions to make it operate.
 
 void setup()
 {
